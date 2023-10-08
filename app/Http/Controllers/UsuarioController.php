@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
-use Exception;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
 class UsuarioController extends Controller
@@ -25,9 +23,9 @@ class UsuarioController extends Controller
     {
         try {
             $request->validate([
-                'nome'      => 'required|max_digits:30',
-                'sobrenome' => 'required|max_digits:60',
-                'email'     => 'required|max_digits:100|email:rfc,dns',
+                'nome'      => 'required|max:30',
+                'sobrenome' => 'required|max:60',
+                'email'     => 'required|max:100|email:rfc,dns',
                 'senha'     => 'required',
             ]);
 
