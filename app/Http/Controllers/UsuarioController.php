@@ -35,7 +35,7 @@ class UsuarioController extends Controller
 
             return response()->json([
                 'mensagem'  => 'Usuário cadastrado com êxito',
-                'usuarios'  => $usuario,
+                'usuario'   => $usuario,
             ], 201);
             return response()->json($usuario);
 
